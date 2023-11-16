@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  Hemlock
+
+  Created by WhitetailAni on 11/13/23.
+  
+*/
+
+"DISMISS" = "Dismiss";
+"CANCEL" = "Cancel";
+"CLOSE" = "Close";
+
+"WINDOW_CLOSE" = "Close Window ";
+"WINDOWSELECTED" = "Selected Window";
+"WINDOW_CLOSECONFIRMTITLE" = "Warning";
+"WINDOW_CLOSECONFIRM" = "Are you sure you want to close this window?";
+"WINDOW_CLOSEALL" = "Close All Windows";
+"WINDOW_RESET" = "Reset Current Window";
+"WINDOW_CLEAR" = "Clear Current Window Screen";
+
+"SETTINGS" = "Settings";
+"SETTINGS_TERMFONTSIZE" = "Sets the font size for log windows when installing a package or running a binary.";
+"SETTINGS_SHEIKAH" = "Sheikah font in app";
+
+
+"STDIN_INPUT" = "Write to the command line";
