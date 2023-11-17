@@ -28,7 +28,7 @@ struct CreditsView: View {
                         .font(.system(size: 60))
                 }
                 Text("""
-                "A tvOS terminal for masochists"
+                "A tvOS terminal app for masochists"
                 """)
                     .if(UserDefaults.settings.bool(forKey: "sheikahFontApply")) { view in
                         view.scaledFont(name: "BotW Sheikah Regular", size: 25)

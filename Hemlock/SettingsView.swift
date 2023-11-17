@@ -12,6 +12,7 @@ struct SettingsView: View {
     @State private var bypassCloseConfirmPre = UserDefaults.settings.bool(forKey: "bypassCloseConfirm")
     @State private var terminalFontSizePre = UserDefaults.settings.integer(forKey: "terminalFontSize")
     @State private var sheikahFontApplyPre = UserDefaults.settings.bool(forKey: "sheikahFontApply")
+    @State private var defaultShellPre = UserDefaults.settings.string(forKey: "defaultShell")
 
     var body: some View {
         ScrollView {
@@ -31,6 +32,8 @@ struct SettingsView: View {
                     view.scaledFont(name: "BotW Sheikah Regular", size: 25)
                 }
                 .font(.system(size: 25))
+            
+            selectShell
                 
             Text(" ")
             sheikahFont
@@ -101,6 +104,28 @@ struct SettingsView: View {
                 }
             Image(systemName: sheikahFontApplyPre ? "checkmark.square" : "square")
         }
+    }
+    
+    @ViewBuilder
+    var selectShell: some View {
+        GeometryReader { geometry in
+            HStack {
+                Spacer()
+                TextField("SETTINGS_SHELL", text: Binding<String>(get: { defaultShellPre! }, set: { value in
+                    defaultShellPre = value
+                })).frame(maxWidth: geometry.size.width * 0.8)
+                Spacer()
+            }
+        }
+        Text(" ")
+            .font(.system(size: 15))
+        Text(" ")
+        Text(LocalizedString("SETTINGS_SHELLDESC"))
+            .if(UserDefaults.settings.bool(forKey: "sheikahFontApply")) { view in
+                view.scaledFont(name: "BotW Sheikah Regular", size: 25)
+            }
+            .font(.system(size: 25))
+        Text(" ")
     }
 }
 
