@@ -18,6 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = hostingController
         window?.makeKeyAndVisible()
         
+        if !(UserDefaults.settings.bool(forKey: "firstLaunch")) {
+            UserDefaults.settings.set(false, forKey: "bypassCloseConfirm")
+            UserDefaults.settings.set(25.0, forKey: "terminalFontSize")
+            UserDefaults.settings.set(false, forKey: "sheikahFontApply")
+            UserDefaults.settings.set("/bin/zsh", forKey: "defaultShell")
+            
+            UserDefaults.settings.set(true, forKey: "firstLaunch")
+        }
+        
         return true
     }
 }
